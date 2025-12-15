@@ -18,6 +18,6 @@ export const VideoPlayer = ({ stream, isMuted = false }: VideoPlayerProps) => {
 
   return (
     // The parent div in the grid will handle sizing, spacing, and rounding.
-    <video ref={videoRef} autoPlay playsInline muted={true} className="w-full h-full object-cover" />
+    <video ref={videoRef} autoPlay playsInline muted={isMuted} className="w-full h-full object-cover" />
   );
 }

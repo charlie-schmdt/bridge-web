@@ -70,7 +70,7 @@ export class RoomConnectionManager {
     };
   }
 
-  public async connect(localStream: MediaStream, micAudioStream: MediaStream): Promise<void> {
+  public async connect(localStream: MediaStream): Promise<void> {
     if (!this.ws || this.ws.readyState !== WebSocket.OPEN) {
       this.callbacks.onError("Signaling server not connected");
       return;
@@ -88,7 +88,7 @@ export class RoomConnectionManager {
       });
 
       this.pc.addTrack(localStream.getVideoTracks()[0], localStream);
-      this.pc.addTrack(micAudioStream.getAudioTracks()[0], micAudioStream)
+      this.pc.addTrack(localStream.getAudioTracks()[0], localStream);
 
       this.pc.onicecandidate = this.handleIceCandidate;
       this.pc.onconnectionstatechange = this.handleConnectionStateChange;

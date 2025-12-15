@@ -4,20 +4,19 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import "../index.css";
-import { AudioSandbox } from "./AudioSandbox";
 import AuthCallback from "./AuthCallback";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import TestWaitingRoomCall from "./components/TestWaitingRoomCall";
 import { AudioContextProvider } from "./contexts/AudioContext";
 import { AuthProvider } from "./contexts/AuthContext";
-import FAQLayout from "./pages/FAQ/FAQLayout";
-import { HomeLayout, homeLoader } from "./pages/Home/HomeLayout";
 import LogInLayout from "./LogInLayout";
 import OnboardingLayout from "./OnboardingLayout";
+import FAQLayout from "./pages/FAQ/FAQLayout";
+import { HomeLayout, homeLoader } from "./pages/Home/HomeLayout";
 import { RoomLayout } from "./pages/Rooms/RoomLayout";
+import { WorkspaceLayout } from "./pages/Workpaces/WorkspaceLayout";
 import { ProfileLayout } from "./ProfileLayout";
 import { SettingsLayout } from "./SettingsLayout";
-import { WorkspaceLayout } from "./pages/Workpaces/WorkspaceLayout";
 
 const router = createHashRouter([
   {
@@ -73,10 +72,6 @@ const router = createHashRouter([
       {
         path: "TestWaitingRoom",
         element: <TestWaitingRoomCall />,
-      },
-      {
-        path: "audiosandbox",
-        element: <AudioSandbox />,
       },
       {
         path: "calendar",
